@@ -1,0 +1,52 @@
+<div data-mnv="ecMapBar" class="mnv-ec-mapbar"></div>
+<script>
+function ready(fn) {
+  if (document.readyState != 'loading'){
+    fn();
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+}
+
+ready(function(){
+  var mapbarCmp;
+  // Create the mapbar obj
+  mapbarCmp = new ecMapBar({
+      buttons: {
+        reset: {
+          label: "Reset",
+          hoverLabel:  "Zoom reset"
+        },
+        zoomIn: {
+          label: "+",
+          hoverLabel: "Zoom in"
+        },
+        zoomOut: {
+          label: "-",
+          hoverLabel: "Zoom out"
+        }
+      }
+    });
+});
+
+<!--
+// Config here your script budget or leave the default configuration
+-->
+var budgetScriptConfig = {
+// list of the built-in metrics http://lafikl.github.io/perfBar/#list 
+  budget: {
+    // the key is the metric id
+    'loadTime': {
+      max: 200
+    },
+    'redirectCount': {
+      max: 1
+    },
+    'globalJS': {
+      min: 2,
+      max: 5
+    }
+  }
+};
+</script>
+
